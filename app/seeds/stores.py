@@ -1,6 +1,6 @@
 from app.models import db, Store
 
-
+# this is the store model for all the store object i am making 
 # Adds a demo user, you can add other users here if you want
 def seed_stores():
     demo = Store(
