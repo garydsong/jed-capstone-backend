@@ -44,8 +44,9 @@ db.init_app(app)
 Migrate(app, db)
 
 # Application Security
-CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+# CORS(app)
+# app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app, resources={r"*": {"origins": "*"}})
 
 # Since we are deploying with Docker and Flask,
 # we won't be using a buildpack when we deploy to Heroku.
