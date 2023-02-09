@@ -3,6 +3,8 @@ from wtforms import StringField
 from wtforms.validators import DataRequired, ValidationError
 
 from app.models import Store
+#  this is the store form that i use to make all my store objects
+
 
 def store_exists(form, field):
     # Checking if username is already in use
@@ -10,6 +12,7 @@ def store_exists(form, field):
     store = Store.query.filter(Store.name == store_name).first()
     if store:
         raise ValidationError('Store name is already taken.')
+
 
 class StoreForm(FlaskForm):
     name = StringField('Store Name', validators=[DataRequired()])
