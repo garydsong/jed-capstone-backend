@@ -3,6 +3,8 @@ from wtforms import StringField
 from wtforms.validators import DataRequired, ValidationError
 
 from app.models import Snack
+# this is the classes on all the snack objects i am making
+
 
 class SnackForm(FlaskForm):
     name = StringField('Snack Name', validators=[DataRequired()])
