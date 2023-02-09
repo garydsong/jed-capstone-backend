@@ -74,7 +74,7 @@ def get_all_stores():
   store_list = []
 
   for store in stores:
-    owner = (Store.query.filter(User.id == store.user_id).one()).to_dict()
+    owner = (Store.query.filter(User.id == store.user_id).first()).to_dict()
     stores_dict = store.to_dict()
     stores_dict['owner'] = owner
     store_list.append(stores_dict)
