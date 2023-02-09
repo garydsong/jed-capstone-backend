@@ -46,7 +46,7 @@ Migrate(app, db)
 # Application Security
 # CORS(app)
 # app.config['CORS_HEADERS'] = 'Content-Type'
-CORS(app, supports_credentials= True, resources={r"*": {"origins": "*"}})
+CORS(app, supports_credentials= True, origins=["http://localhost:3000"],resources={r"*": {"origins": "*", "allow_headers": "*", "expose_headers": "*"}})
 app.config["CORS_HEADERS"] = "Content-Type"
 
 # Since we are deploying with Docker and Flask,
