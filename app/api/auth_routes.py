@@ -3,10 +3,11 @@ from app.models import User, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
-from flask_cors import cross_origin
+from flask_cors import cross_origin, CORS
+
 
 auth_routes = Blueprint('auth', __name__)
-
+CORS(auth_routes)
 
 def validation_errors_to_error_messages(validation_errors):
     """
